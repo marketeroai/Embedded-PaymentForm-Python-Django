@@ -47,7 +47,8 @@ def checkout(request):
     response_data = response.json()
 
     if response_data['status'] != 'SUCCESS':
-        raise Exception
+        #raise Exception
+        raise Exception(f"Payment creation failed: {response_data.get('answer', {}).get('errorMessage', 'Unknown error')}")
     
     token = response_data['answer']['formToken']
     return render(request, 'Demo/checkout.html', {'token': token, 'publickey': keys['PUBLIC_KEY']})
