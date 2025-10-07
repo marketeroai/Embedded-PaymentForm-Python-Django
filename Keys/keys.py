@@ -1,13 +1,14 @@
 keys = {
   # Identificador de su tienda
-  "USERNAME": "~ CHANGE_ME_USER_ID ~",
+  "USERNAME": "11941418",
 
   # Clave de Test o Producción
-  "PASSWORD": "~ CHANGE_ME_PASSWORD ~",
+  "PASSWORD": "testpassword_20nN2YtFrWKJduhX9C423SWd9Q9RFKOJq4g3dUPH5kQnk",
 
   # Clave Pública de Test o Producción
-  "PUBLIC_KEY": "~ CHANGE_ME_PUBLIC_KEY ~",
+  "PUBLIC_KEY": "11941418:testpublickey_8A7uGX4OvvYdDpFSPjXKEGEwf1nVmv3ubbQj6je9qbnKG",
 
   # Clave HMAC-SHA-256 de Test o Producción
-  "HMACSHA256": "~ CHANGE_ME_HMAC_SHA_256 ~"
+  "HMACSHA256": "bpZTu46kYd9zACE6cZ3YPJeUAWYMNCgJZQvorB1W2yIBL"
+
 }

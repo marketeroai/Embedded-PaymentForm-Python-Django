@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'fontawesomefree',
     'Demo',
+    'payments',
 ]
 
 MIDDLEWARE = [

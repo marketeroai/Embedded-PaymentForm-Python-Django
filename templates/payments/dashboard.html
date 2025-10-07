@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center mb-5">
+            <h1>Choose Your Payment Plan</h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-center g-4">
+        <!-- Premium Plan -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h2 class="h4 mb-0">Premium</h2>
+                </div>
+                <div class="card-body text-center d-flex flex-column">
+                    <h3 class="card-title pricing-card-title">
+                        S/. 99.90
+                    </h3>
+                    <form action="{% url 'payments:create_payment' %}" method="post" class="mt-auto">
+                        {% csrf_token %}
+                        <input type="hidden" name="amount" value="99.90">
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            Pay Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg">
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h2 class="h4 mb-0">Standard</h2>
+                </div>
+                <div class="card-body text-center d-flex flex-column">
+                    <h3 class="card-title pricing-card-title">
+                        S/. 24.90
+                    </h3>
+                    <form action="{% url 'payments:create_payment' %}" method="post" class="mt-auto">
+                        {% csrf_token %}
+                        <input type="hidden" name="amount" value="24.90">
+                        <button type="submit" class="btn btn-success btn-lg w-100">
+                            Pay Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Basic Plan -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg">
+                <div class="card-header bg-info text-white text-center py-3">
+                    <h2 class="h4 mb-0">Basic</h2>
+                </div>
+                <div class="card-body text-center d-flex flex-column">
+                    <h3 class="card-title pricing-card-title">
+                        S/. 9.90
+                    </h3>
+                    <form action="{% url 'payments:create_payment' %}" method="post" class="mt-auto">
+                        {% csrf_token %}
+                        <input type="hidden" name="amount" value="9.90">
+                        <button type="submit" class="btn btn-info btn-lg w-100">
+                            Pay Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

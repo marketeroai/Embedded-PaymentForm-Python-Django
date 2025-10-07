@@ -8,18 +8,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/journal/bootstrap.min.css"
     integrity="sha384-QDSPDoVOoSWz2ypaRUidLmLYl4RyoBWI44iA5agn6jHegBxZkNqgm2eHb6yZ5bYs" crossorigin="anonymous" />
 
-<!-- Libreria JS de la pasarela -->
-<script type="text/javascript"
-    src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
-    kr-public-key="{{ publickey }}"
-    kr-post-url-success="{% url 'payments:success' %}"
-    kr-post-url-refused="{% url 'payments:failed' %}"
-    kr-language="es-Es">
-</script>
-
 <!-- Estilos de la pasarela de pagos -->
 <link rel="stylesheet" href="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.css">
-<script type="text/javascript" src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -41,17 +31,53 @@
                 <div id="micuentawebstd_rest_wrapper">
                     <div class="kr-embedded" kr-form-token="{{ token }}"></div>
                 </div>
+                <div id="debug-info" class="mt-3">
+                    <pre id="debug-output"></pre>
+                </div>
             </section>
         </div>
         <div class="col-md-3"></div>
     </div>
 </section>
 
-<script>
-    KR.onError(function(event) {
-        var code = event.errorCode;
-        var message = event.errorMessage;
-        console.error(code + ": " + message);
-    });
+<!-- Scripts at the end of body -->
+<script type="text/javascript">
+    console.log('Script initialization started');
+    
+    function initKR() {
+        var KR = new KRGlue.KR(function(error) {
+            if (error) {
+                console.error('KR error:', error);
+                return;
+            }
+            console.log('KR initialized successfully');
+        });
+
+        KR.setFormConfig({
+            formToken: "{{ token }}",
+            language: "es-ES"
+        }).then(function(v) {
+            console.log('Form config set');
+            return KR.addForm("#micuentawebstd_rest_wrapper");
+        }).then(function(v) {
+            console.log('Form added');
+            return KR.showForm(KR.result.formId);
+        }).catch(function(error) {
+            console.error('Error:', error);
+        });
+    }
 </script>
+
+<!-- Libreria JS de la pasarela -->
+<script 
+    src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js" 
+    kr-public-key="{{ publickey }}"
+    kr-post-url-success="{% url 'payments:success' %}"
+    kr-post-url-refused="{% url 'payments:failed' %}"
+    kr-language="es-Es"
+    onload="initKR()">
+</script>
+
+<!-- Javascript con el objeto KR -->
+<script src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.js"></script>
 {% endblock %}
