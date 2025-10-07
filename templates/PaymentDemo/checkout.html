@@ -38,13 +38,16 @@
     <div class="center-column col-md-6">
       <section class="payment-form">
         <div class="row">
-          <li>Pago con tarjeta de crédito/débito</li>
-          <img src="https://github.com/izipay-pe/Imagenes/blob/main/logo_tarjetas_aceptadas/logo-tarjetas-aceptadas-351x42.png?raw=true" alt="Tarjetas aceptadas" style="width: 200px;">
+          <div class="col-12 text-center mb-3">
+            <h4>Monto a pagar: S/. {{ amount }}</h4>
+            <p>Pago con tarjeta de crédito/débito</p>
+            <img src="https://github.com/izipay-pe/Imagenes/blob/main/logo_tarjetas_aceptadas/logo-tarjetas-aceptadas-351x42.png?raw=true" alt="Tarjetas aceptadas" style="width: 200px;">
+          </div>
         </div>
         <hr>
         <div id="micuentawebstd_rest_wrapper">
           <!-- HTML para incrustar pasarela de pagos -->
-          <div class="kr-embedded" kr-form-token="{{token}}"></div>
+          <div style="margin:auto" class="kr-embedded" kr-form-token="{{token}}"></div>
           <!---->
         </div>
       </section>
