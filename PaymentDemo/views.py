@@ -24,22 +24,23 @@ def checkout(request):
         'Authorization': auth,
     }
 
+    # Get data from POST or use defaults for demo
     data = {
-        "amount": int(float(request.POST['amount']) * 100),
-        "currency": request.POST['currency'],
-        "orderId": request.POST['orderId'],
+        "amount": int(float(request.POST.get('amount', 100.00)) * 100),
+        "currency": request.POST.get('currency', 'PEN'),
+        "orderId": request.POST.get('orderId', 'DEMO-001'),
         "customer": {
-            "email": request.POST['email'],
-            "firstName": request.POST['firstName'],
-            "lastName": request.POST['lastName'],
-            "phoneNumber": request.POST['phoneNumber'],
-            "identityType": request.POST['identityType'],
-            "identityCode": request.POST['identityCode'],
-            "address": request.POST['address'],
-            "country": request.POST['country'],
-            "state": request.POST['state'],
-            "city": request.POST['city'],
-            "zipCode": request.POST['zipCode'],    
+            "email": request.POST.get('email', 'demo@email.com'),
+            "firstName": request.POST.get('firstName', 'Demo'),
+            "lastName": request.POST.get('lastName', 'User'),
+            "phoneNumber": request.POST.get('phoneNumber', '999999999'),
+            "identityType": request.POST.get('identityType', 'DNI'),
+            "identityCode": request.POST.get('identityCode', '12345678'),
+            "address": request.POST.get('address', 'Demo Address'),
+            "country": request.POST.get('country', 'PE'),
+            "state": request.POST.get('state', 'LIMA'),
+            "city": request.POST.get('city', 'LIMA'),
+            "zipCode": request.POST.get('zipCode', '15001'),
         }
     }
 
