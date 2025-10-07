@@ -56,12 +56,18 @@ def checkout(request, payment_id):
         "currency": "PEN",
         "orderId": str(payment.id),
         "customer": {
-            "email": "example@gmail.com"
-        },
-        "successURL": "http://127.0.0.1:8000/payments/success/",
-        "failureURL": "http://127.0.0.1:8000/payments/failed/",
-        "notificationURL": "http://127.0.0.1:8000/payments/ipn/",
-        "formAction": "PAYMENT",
+            "email": "example@gmail.com",
+            "firstName": "John",
+            "lastName": "Doe",
+            "phoneNumber": "999999999",
+            "identityType": "DNI",
+            "identityCode": "12345678",
+            "address": "Example Address",
+            "country": "PE",
+            "state": "LIMA",
+            "city": "LIMA",
+            "zipCode": "15001"
+        }
     }
 
     logger.debug(f'Sending payment request: {data}')
@@ -75,8 +81,7 @@ def checkout(request, payment_id):
     token = response_data['answer']['formToken']
     return render(request, 'payments/checkout.html', {
         'token': token,
-        'publickey': keys['PUBLIC_KEY'],
-        'payment': payment
+        'publickey': keys['PUBLIC_KEY']
     })
 
 

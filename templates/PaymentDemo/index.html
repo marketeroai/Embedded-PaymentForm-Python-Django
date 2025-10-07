@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="container">
+    <form class="col-md-12" action="checkout" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <nav class="navbar bg-primary" style="background-color: #FF2D46!important;">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand mb-1"><img src="https://iziweb001b.s3.amazonaws.com/webresources/img/logo.png" width="80"></a>
+        </div>
+    </nav>
+    <section class="container">
+        <form class="col-md-12" action="checkout" method="POST">
+            {% csrf_token %}
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h3>Formulario de Pago Simple</h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- Nombre completo -->
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="firstName">Nombre</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Juan" required value="Juan">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lastName">Apellido</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Pérez" required value="Pérez">
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="juan@email.com" required value="juan@email.com">
+                            </div>
+
+                            <!-- Order ID -->
+                            <div class="form-group">
+                                <label for="orderId">Número de Orden</label>
+                                <input type="text" class="form-control" id="orderId" name="orderId" placeholder="ORD-001" required value="ORD-001">
+                            </div>
+
+                            <!-- Monto -->
+                            <div class="form-group">
+                                <label for="amount">Monto</label>
+                                <input type="number" class="form-control" id="amount" name="amount" placeholder="100.00" step="0.01" min="0" required value="100.00">
+                            </div>
+
+                            <!-- Moneda -->
+                            <div class="form-group">
+                                <label for="currency">Moneda</label>
+                                <select class="form-control" id="currency" name="currency">
+                                    <option value="PEN">Soles (PEN)</option>
+                                    <option value="USD">Dólares (USD)</option>
+                                </select>
+                            </div>
+
+                            <!-- Campos ocultos con datos por defecto -->
+                            <input type="hidden" name="phoneNumber" value="999999999">
+                            <input type="hidden" name="identityType" value="DNI">
+                            <input type="hidden" name="identityCode" value="12345678">
+                            <input type="hidden" name="address" value="Calle Principal 123">
+                            <input type="hidden" name="country" value="PE">
+                            <input type="hidden" name="state" value="LIMA">
+                            <input type="hidden" name="city" value="LIMA">
+                            <input type="hidden" name="zipCode" value="15001">
+
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary btn-lg" type="submit">Procesar Pago</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+        </div>
+    </form>
+</section>
+{% endblock %}
