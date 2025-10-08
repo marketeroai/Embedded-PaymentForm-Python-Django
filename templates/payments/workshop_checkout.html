@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago - Inscripción Taller de Videojuegos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap for payment form -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/journal/bootstrap.min.css"
+        integrity="sha384-QDSPDoVOoSWz2ypaRUidLmLYl4RyoBWI44iA5agn6jHegBxZkNqgm2eHb6yZ5bYs" crossorigin="anonymous" />
+
+    <!-- Izipay payment scripts -->
+    <script type="text/javascript"
+        src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
+        kr-public-key="{{ publickey }}"
+        kr-post-url-success="{% url 'payments:payment_success' %}",
+        kr-post-url-refused="{% url 'payments:payment_failed' %}",
+        kr-language="es-Es">
+    </script>
+
+    <link rel="stylesheet" href="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.css">
+    <script type="text/javascript" src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 2rem 0;">
+        <div class="container">
+            <div class="text-center">
+                <h1>🎮 Pago de Inscripción</h1>
+                <p class="mb-0">Taller: Diseña tu primer videojuego</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Payment Section -->
+    <section class="container" style="padding: 3rem 0;">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg">
+                    <div class="card-body p-4">
+                        <!-- Registration Summary -->
+                        <div class="mb-4 p-3 bg-light rounded">
+                            <h4 class="card-title mb-3">📋 Resumen de Inscripción</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Nombre:</strong> {{ customer_name }}</p>
+                                    <p><strong>Teléfono:</strong> {{ customer_phone }}</p>
+                                    <p><strong>Email:</strong> {{ customer_email }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Taller:</strong> Diseña tu primer videojuego</p>
+                                    <p><strong>Modalidad:</strong> Presencial</p>
+                                    <p><strong>Fecha:</strong> Sábado 12 de octubre, 2024</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Amount -->
+                        <div class="text-center mb-4">
+                            <h3 class="text-success">
+                                Monto a pagar: <strong>S/ {{ payment.amount }}</strong>
+                                <small class="text-muted">(con 20% de descuento)</small>
+                            </h3>
+                            <p class="text-muted mt-2">
+                                Tarjetas de crédito y débito aceptadas
+                            </p>
+                            <img src="https://github.com/izipay-pe/Imagenes/blob/main/logo_tarjetas_aceptadas/logo-tarjetas-aceptadas-351x42.png?raw=true"
+                                 alt="Tarjetas aceptadas"
+                                 style="width: 250px; margin-top: 1rem;">
+                        </div>
+
+                        <hr>
+
+                        <!-- Payment Form -->
+                        <div id="micuentawebstd_rest_wrapper">
+                            <div class="kr-embedded" kr-form-token="{{ token }}"></div>
+                        </div>
+
+                        <div id="kr-error" class="alert alert-danger" style="display:none; margin-top: 1rem;"></div>
+
+                        <div class="alert alert-info mt-3">
+                            <i class="fas fa-shield-alt"></i>
+                            <strong>Pago seguro:</strong> Tu información está protegida con encriptación SSL y no se almacena en nuestros servidores.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Button -->
+                <div class="text-center mt-4">
+                    <a href="{% url 'payments:workshop_landing' %}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Volver al formulario
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: rgba(0,0,0,0.9); color: white; padding: 2rem 0; margin-top: 3rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>GameDev Academy</h5>
+                    <p>Formando a la próxima generación de diseñadores y desarrolladores de videojuegos.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <h5>Contacto</h5>
+                    <p>
+                        <i class="fas fa-envelope"></i> innovations.studio.eirl@gmail.com<br>
+                        <i class="fas fa-phone"></i> +51 924 384 255
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p class="mb-0">© 2025 GameDev Academy. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        setTimeout(function() {
+            if (typeof KR !== 'undefined') {
+                KR.onError(function(event) {
+                    var code = event.errorCode;
+                    var message = event.errorMessage;
+                    console.error(code + ": " + message);
+                    document.getElementById('kr-error').innerText = code + ": " + message;
+                    document.getElementById('kr-error').style.display = 'block';
+                });
+            } else {
+                console.error("KR not defined after timeout");
+                document.getElementById('kr-error').innerText = "Error al cargar el formulario de pago. Inténtalo nuevamente.";
+                document.getElementById('kr-error').style.display = 'block';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

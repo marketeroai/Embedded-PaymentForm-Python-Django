@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseña tu primer videojuego - Taller presencial en Piura</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <img src="images/hero-gaming-workshop.jpg" alt="Jóvenes diseñando videojuegos">
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="urgency-badge">
+                    🕓 Oferta válida solo hasta el 8 de octubre
+                </div>
+                
+                <h1>
+                    <span class="gradient-text">¡Diseña tu primer videojuego!</span>
+                </h1>
+                
+                <p class="subtitle">
+                    Taller presencial en Piura con 
+                    <span class="highlight">20% de descuento</span> 
+                    por feriado
+                </p>
+                
+                <p class="description">
+                    Aprende a crear tus propios videojuegos desde cero con técnicas profesionales y herramientas fáciles de usar.
+                </p>
+                
+                <div class="cta-button">
+                    <button onclick="scrollToForm()" class="btn-primary">
+                        Inscríbete con 20% de descuento 🔥
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-footer-gradient"></div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2>
+                    🚀 Lo que aprenderás en este taller
+                </h2>
+                <p class="subtitle">
+                    Conocimientos prácticos que te convertirán en un diseñador de videojuegos
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Historia y Personajes</h3>
+                    <p>Cómo se diseña la historia y los personajes de un videojuego</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Jugabilidad y Mecánicas</h3>
+                    <p>Principios básicos de jugabilidad y mecánicas de juego</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Arte y Animación</h3>
+                    <p>Introducción al arte y la animación para videojuegos</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Herramientas Profesionales</h3>
+                    <p>Uso de herramientas para crear tu primer prototipo</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Pensamiento Creativo</h3>
+                    <p>Cómo pensar como un diseñador de juegos profesional</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Proyecto Final</h3>
+                    <p>Crea y presenta tu primer videojuego al finalizar el taller</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button onclick="scrollToForm()" class="btn-primary">
+                    Quiero aprender a diseñar videojuegos 🎮
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Details Section -->
+    <section class="workshop-details">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2>Detalles del Taller</h2>
+                <p class="subtitle">Toda la información que necesitas saber</p>
+            </div>
+
+            <div class="details-card">
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="icon-container">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p class="label">Lugar</p>
+                            <p class="value">Piura - Centro de Innovación Tecnológica</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon-container">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div>
+                            <p class="label">Inicio</p>
+                            <p class="value">Sábado 12 de octubre, 2024</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon-container">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <p class="label">Duración</p>
+                            <p class="value">4 semanas - Sábados de 3:00 PM a 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon-container">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <p class="label">Modalidad</p>
+                            <p class="value">Presencial con práctica real y certificado</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon-container">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div>
+                            <p class="label">Descuento</p>
+                            <p class="value">20% por feriado del Combate de Angamos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing and Syllabus Section -->
+    <section class="pricing-syllabus">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2>Información del Taller</h2>
+            </div>
+
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="switchTab('precio')">Precio</button>
+                    <button class="tab-btn" onclick="switchTab('silabo')">Sílabo</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="precio" class="tab-panel active">
+                        <h3>Planes y Precios</h3>
+                        <p class="pricing-note">🎯 <strong>Descuento del 20% válido solo hasta el 8 de octubre</strong></p>
+                        <div class="pricing-content">
+                            <div class="pricing-cards">
+                                <div class="pricing-card">
+                                    <div class="plan-header">
+                                        <span class="plan-icon">
+                                            <i class="fas fa-file-signature"></i>
+                                        </span>
+                                        <h4>Inscripción</h4>
+                                    </div>
+                                    <div class="price-old">S/ 60</div>
+                                    <div class="price-new">S/ 48</div>
+                                    <p class="price-benefits">Asegura tu cupo y recibe tu kit digital</p>
+                                </div>
+
+                                <div class="pricing-card">
+                                    <div class="plan-header">
+                                        <span class="plan-icon">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </span>
+                                        <h4>Mensualidad</h4>
+                                    </div>
+                                    <div class="price-old">S/ 250</div>
+                                    <div class="price-new">S/ 200</div>
+                                    <p class="price-benefits">4 clases presenciales + materiales</p>
+                                </div>
+
+                                <div class="pricing-card popular">
+                                    <div class="popular-badge">Más popular</div>
+                                    <div class="plan-header">
+                                        <span class="plan-icon">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </span>
+                                        <h4>Curso Completo</h4>
+                                    </div>
+                                    <div class="price-old">S/ 560</div>
+                                    <div class="price-new">S/ 448</div>
+                                    <p class="price-benefits">Inscripción incluida + certificado + proyecto final + todo incluido</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="silabo" class="tab-panel">
+                        <h3>Sílabo del Taller</h3>
+                        <div class="syllabus-content">
+                            <div class="syllabus-flow">
+                                <h4>🎮 Tu Primer Viaje en Desarrollo de Videojuegos con Unity</h4>
+
+                                <div class="week-group">
+                                    <div class="week-header">Semanas 1-2: Game Thinking y Fundamentos Unity</div>
+                                    <p>Introducción al Game Thinking: loops de juego y psicología del jugador. Conoce la interfaz Unity y primeros GameObjects. Crea tus primeros Prefabs y usa el sistema de Components básico. Scripts simples en C# para movimiento y entradas del jugador. Implementación inicial de DMA (Dynamic Memory Allocation) para objetos dinámicos.</p>
+                                </div>
+
+                                <div class="week-group">
+                                    <div class="week-header">Semanas 3-4: Personajes y Animación Básica</div>
+                                    <p>Importa y anima sprites 2D. Trabaja con Materials y Textures simples en DAM (Digital Asset Management). Crea personajes jugables con colliders y physics básica. Implementa animación frame-by-frame y estados de personaje. Primeros GameObjects interactivos y manejo de inputs del usuario.</p>
+                                </div>
+
+                                <div class="week-group">
+                                    <div class="week-header">Semanas 5-6: Mecánicas de Juego y Nivel Design</div>
+                                    <p>Diseña levels con Unity Tilemap. Implementa Rigidbodies y Colliders. Crea físicas custom y detección de colisión con Raycasting. Sistema de puntuación y Game States. Introducción a Prefabs para elementos reutilizables. Primer profiling básico con Unity Profiler.</p>
+                                </div>
+
+                                <div class="week-group">
+                                    <div class="week-header">Semanas 7-8: Proyecto Completo y Publicación</div>
+                                    <p>Combina mecánicas aprendidas en un juego completo. Build settings para múltiples plataformas. Publicación en PC y WebGL. Google Play Store para móviles. Proyecto final jugable y presentación. Portfolio básico con proyectos terminados.</p>
+                                </div>
+
+                                <div class="learning-objectives">
+                                    <h5>💡 Habilidades Fundamentales que Desarrollarás:</h5>
+                                    <ul>
+                                        <li>✅ Lógica de Game Thinking aplicada en la práctica</li>
+                                        <li>✅ Programación básica en C# para videojuegos</li>
+                                        <li>✅ Diseño y construcción de niveles funcionales</li>
+                                        <li>✅ Gestión eficiente de DMA y recursos game</li>
+                                        <li>✅ Workflow básico de desarrollo Unity</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course-features">
+                                    <div class="feature">
+                                        <strong>🎯 Nivel:</strong> Principiante a Intermedio
+                                    </div>
+                                    <div class="feature">
+                                        <strong>🛠️ Herramientas:</strong> Unity 2023+ (gratis) + Visual Studio
+                                    </div>
+                                    <div class="feature">
+                                        <strong>📚 Recursos:</strong> Templates + guías + assets listos
+                                    </div>
+                                    <div class="feature">
+                                        <strong>🎮 Proyectos:</strong> 3 juegos completos desde cero
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2>
+                    💬 Lo que dicen nuestros alumnos
+                </h2>
+                <p class="subtitle">
+                    Experiencias reales de estudiantes que ya tomaron el taller
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <p class="testimonial-text">
+                        "Nunca pensé que podía crear un videojuego. Este taller me abrió la mente y ahora estoy desarrollando mi propio juego."
+                    </p>
+                    <div class="testimonial-footer">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Carla" alt="Carla Mendoza">
+                        <div>
+                            <p class="name">Carla Mendoza</p>
+                            <p class="age">17 años</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <p class="testimonial-text">
+                        "El profesor usa una metodología muy efectiva y las clases súper dinámicas. Aprendí más de lo que esperaba y me divertí mucho."
+                    </p>
+                    <div class="testimonial-footer">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Diego" alt="Diego Ramírez">
+                        <div>
+                            <p class="name">Diego Ramírez</p>
+                            <p class="age">15 años</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <p class="testimonial-text">
+                        "El mejor taller al que he asistido. Ahora entiendo cómo funcionan mis videojuegos favoritos y puedo crear los míos."
+                    </p>
+                    <div class="testimonial-footer">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sofia" alt="Sofía Torres">
+                        <div>
+                            <p class="name">Sofía Torres</p>
+                            <p class="age">16 años</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="instructor">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2>
+                    👨‍🏫 Conoce a tu instructor
+                </h2>
+            </div>
+
+            <div class="instructor-card">
+                <div class="instructor-content">
+                    <div class="instructor-info">
+                        <h3>Steve Rosado</h3>
+                        <div class="badges">
+                            <span class="badge">Diseñador de Videojuegos</span>
+                            <span class="badge">+10 años de experiencia</span>
+                        </div>
+                        <p>
+                            Diseñador y desarrollador de videojuegos con más de 10 años de experiencia en la industria.
+                            Ha trabajado en múltiples proyectos indie, y es apasionado por enseñar a las nuevas
+                            generaciones el arte de crear mundos interactivos.
+                        </p>
+                        <p>
+                            Especializado en Unity y Blender 3D, Steve ha ayudado a cientos de estudiantes a
+                            convertir sus ideas en videojuegos reales, desde conceptos simples hasta prototipos
+                            completamente jugables.
+                        </p>
+                        <div class="expertise">
+                            <div class="expertise-item">
+                                <span class="emoji">🎮</span>
+                                <span>Indie Game Developer</span>
+                            </div>
+                            <div class="expertise-item">
+                                <span class="emoji">⚙️</span>
+                                <span>Artista 3D</span>
+                            </div>
+                            <div class="expertise-item">
+                                <span class="emoji">🎨</span>
+                                <span>Game Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instructor-image">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@creativomultimedia/video/7452432360424901894" data-video-id="7452432360424901894" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@creativomultimedia" href="https://www.tiktok.com/@creativomultimedia?refer=embed">@creativomultimedia</a> <a title="piura" target="_blank" href="https://www.tiktok.com/tag/piura?refer=embed">#piura</a> <a title="videojuegos" target="_blank" href="https://www.tiktok.com/tag/videojuegos?refer=embed">#videojuegos</a> <a title="talleres" target="_blank" href="https://www.tiktok.com/tag/talleres?refer=embed">#talleres</a> <a title="curso" target="_blank" href="https://www.tiktok.com/tag/curso?refer=embed">#curso</a> <a target="_blank" title="♬ som original - Baile Reggae do Maranhão" href="https://www.tiktok.com/music/som-original-7440575684369779511?refer=embed">♬ som original - Baile Reggae do Maranhão</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Section -->
+    <section class="special-offer">
+        <div class="container">
+            <div class="offer-card">
+                <div class="text-center">                   
+
+                    <h2>¡Oferta por el Combate de Angamos!</h2>
+
+                    <p class="offer-text">
+                        Solo por el feriado del 8 de octubre, obtén
+                        <span class="discount">20% de descuento</span>
+                        en tu inscripción.
+                    </p>
+
+                    <div class="countdown">
+                        <p>La oferta termina en:</p>
+                        <div class="countdown-timer" id="countdown-timer">
+                            <div class="time-block">
+                                <div class="time-number">0</div>
+                                <div class="time-label">Días</div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time-number">0</div>
+                                <div class="time-label">Horas</div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time-number">0</div>
+                                <div class="time-label">Min</div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time-number">0</div>
+                                <div class="time-label">Seg</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="scrollToForm()" class="btn-primary">
+                        Aprovechar descuento ahora 🔥
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="registro" class="registration">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>
+                    ✍️ Regístrate ahora y asegura tu descuento
+                </h2>
+                <p class="subtitle">
+                    Completa el formulario y nos pondremos en contacto contigo
+                </p>
+            </div>
+
+            <div class="form-card">
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input type="text" id="name" required placeholder="Ingresa tu nombre completo">
+                        <span class="error" id="name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono / WhatsApp *</label>
+                        <input type="tel" id="phone" required placeholder="999 999 999">
+                        <span class="error" id="phone-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" required placeholder="tuemail@mail.com">
+                        <span class="error" id="email-error"></span>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="whatsapp">
+                        <label for="whatsapp">Quiero que me envíen más información por WhatsApp</label>
+                    </div>
+
+                    <p class="form-note">
+                        🔒 Tus datos están protegidos y no se comparten con terceros
+                    </p>
+
+                    <button type="submit" id="submit-btn" class="btn-primary">
+                        Inscribirme con 20% de descuento
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>
+                    ❓ Preguntas Frecuentes
+                </h2>
+                <p class="subtitle">
+                    Resolvemos tus dudas más comunes
+                </p>
+            </div>
+
+            <div class="faq-accordion">
+                <details class="faq-item">
+                    <summary>¿Necesito saber programar?</summary>
+                    <p>No, empezamos desde cero. El taller está diseñado para personas sin experiencia previa en programación o diseño de videojuegos. Te enseñaremos todo lo que necesitas saber paso a paso.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Hay límite de edad?</summary>
+                    <p>El taller es recomendado para mayores de 10 años. Si tienes pasión por los videojuegos y quieres aprender a crearlos, ¡este taller es para ti!</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Incluye materiales?</summary>
+                    <p>Sí, se brindan todos los recursos digitales necesarios para el taller, incluyendo software, guías y material de apoyo. Solo necesitas traer tu laptop.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué pasa si no puedo asistir a una sesión?</summary>
+                    <p>Proporcionamos las guías de las sesiones y el material complementario para que puedas ponerte al día. También ofrecemos soporte continuo a través de nuestro grupo de Discord.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Necesito una laptop potente?</summary>
+                    <p>No necesariamente. Trabajaremos con herramientas que funcionan en laptops de gama media. Te enviaremos los requisitos mínimos al confirmar tu inscripción.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Recibiré un certificado al finalizar?</summary>
+                    <p>Sí, todos los participantes que completen el taller recibirán un certificado de finalización que podrás incluir en tu portafolio o CV.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="decorative-bg">
+            🎮🎯✨🚀
+        </div>
+        <div class="container">
+            <div class="text-center">
+                <h2>
+                    🎮 ¡Empieza tu camino como diseñador de videojuegos!
+                </h2>
+
+                <p class="cta-text">
+                    No dejes pasar la oportunidad de aprender y crear algo épico.
+                    <br>
+                    <span class="highlight">Tu futuro en el mundo gaming comienza aquí.</span>
+                </p>
+
+                <button onclick="scrollToForm()" class="btn-primary">
+                    Inscríbete hoy con 20% de descuento 🔥
+                </button>
+
+                <p class="urgency">
+                    ⏰ Cupos limitados - La oferta termina el 8 de octubre
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GameDev Academy</h3>
+                    <p>Formando a la próxima generación de diseñadores y desarrolladores de videojuegos en Piura y todo el Perú.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <div>
+                            <i class="fas fa-phone"></i>
+                            <span>+51 924 384 255</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>innovations.studio.eirl@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/PiuraInnova/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <!-- <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> -->
+                        <!-- <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 GameDev Academy. Todos los derechos reservados.</p>
+                <p>⚡ Promoción válida hasta el 8 de octubre por feriado nacional</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

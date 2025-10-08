@@ -24,23 +24,14 @@ def checkout(request):
         'Authorization': auth,
     }
 
-    # Get data from POST or use defaults for demo
+    # Get data from POST or GET (URL params) or use defaults for demo
+    amount_str = request.POST.get('amount', request.GET.get('amount', '100.00'))
     data = {
-        "amount": int(float(request.POST.get('amount', 100.00)) * 100),
+        "amount": int(float(amount_str) * 100),
         "currency": request.POST.get('currency', 'PEN'),
         "orderId": request.POST.get('orderId', 'DEMO-001'),
         "customer": {
-            "email": request.POST.get('email', 'demo@email.com'),
-            "firstName": request.POST.get('firstName', 'Demo'),
-            "lastName": request.POST.get('lastName', 'User'),
-            "phoneNumber": request.POST.get('phoneNumber', '999999999'),
-            "identityType": request.POST.get('identityType', 'DNI'),
-            "identityCode": request.POST.get('identityCode', '12345678'),
-            "address": request.POST.get('address', 'Demo Address'),
-            "country": request.POST.get('country', 'PE'),
-            "state": request.POST.get('state', 'LIMA'),
-            "city": request.POST.get('city', 'LIMA'),
-            "zipCode": request.POST.get('zipCode', '15001'),
+            "email": "demo@email.com"
         }
     }
 
@@ -52,7 +43,11 @@ def checkout(request):
         raise Exception(f"Payment creation failed: {response_data.get('answer', {}).get('errorMessage', 'Unknown error')}")
     
     token = response_data['answer']['formToken']
-    return render(request, 'PaymentDemo/checkout.html', {'token': token, 'publickey': keys['PUBLIC_KEY']})
+    return render(request, 'PaymentDemo/checkout.html', {
+        'token': token,
+        'publickey': keys['PUBLIC_KEY'],
+        'amount': amount_str
+    })
 
 @csrf_exempt
 def result(request):

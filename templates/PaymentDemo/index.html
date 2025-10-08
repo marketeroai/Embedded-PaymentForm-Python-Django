@@ -16,13 +16,19 @@
                         <div class="card-body">
                             <h3 class="card-title mb-4">Demo de Pago con Izipay</h3>
                             <div class="alert alert-info">
-                                <strong>Prueba Rápida:</strong> Esta demo procesa automáticamente un pago de prueba de S/. 100.00
-                                <br><small class="text-muted">No se requiere información adicional - solo haz clic para ver el formulario de pago.</small>
+                                <strong>Prueba Rápida:</strong> Selecciona un monto de prueba para procesar un pago.
+                                <br><small class="text-muted">Estos pagos son simulados - no se procesarán cargos reales.</small>
                             </div>
 
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <a href="{% url 'PaymentDemo:checkout' %}" class="btn btn-success btn-lg me-md-2">
-                                    <i class="fas fa-credit-card"></i> Procesar Pago de Prueba
+                            <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+                                <a href="{% url 'PaymentDemo:checkout' %}?amount=50.00" class="btn btn-success btn-lg" title="Procesar pago de S/ 50.00">
+                                    <i class="fas fa-credit-card"></i> Pagar S/ 50.00
+                                </a>
+                                <a href="{% url 'PaymentDemo:checkout' %}?amount=100.00" class="btn btn-primary btn-lg" title="Procesar pago de S/ 100.00">
+                                    <i class="fas fa-credit-card"></i> Pagar S/ 100.00
+                                </a>
+                                <a href="{% url 'PaymentDemo:checkout' %}?amount=200.00" class="btn btn-danger btn-lg" title="Procesar pago de S/ 200.00">
+                                    <i class="fas fa-credit-card"></i> Pagar S/ 200.00
                                 </a>
                             </div>
 
